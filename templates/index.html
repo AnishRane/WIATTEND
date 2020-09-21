@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<a href="{% url 'create_classroom' %}">Create Classroom</a>
+	<h2>List of classrooms</h2>
+	{% for classroom in classrooms %}
+		<a href="{% url 'view_classroom' classroom.id  %}">{{ classroom }}</a>
+	{% endfor %}
+{% endblock %}

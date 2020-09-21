@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>{{ classroom }}</h2>
+
+<table border="1" width="800">
+	<thead>
+		<td>Student</td>
+		<td>Roll Number</td>
+	</thead>
+{% for attendee in attendance %}	
+	<tr>
+		<td>{{ attendee.student.name }}</td>
+		<td>{{ attendee.student.roll_number }}</td>
+	</tr>
+{% endfor %}
+</table>
+{% endblock %}

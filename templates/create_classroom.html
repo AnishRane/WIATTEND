@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST">
+	{% csrf_token %}
+	<label>Class name</label>
+	<input type="text" name="class_name">
+	<br><br>
+	<label>Select Router</label>
+	<select name="router">
+		<option value="-1">---</option>
+		{% for router in routers %}
+		<option value="{{ router.id }}">{{ router }}</option>
+		{% endfor %}
+	</select>
+	<br><br>
+	<input type="submit" value="Create">
+</form>
+
+{% endblock %}
